@@ -1,0 +1,46 @@
+﻿@model ElectricityBillGeneration.Models.ElectricityBill
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h4>ElectricityBill</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ConsumerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConsumerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UnitsConsumed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnitsConsumed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BillAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BillAmount)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to Registry", "Index")
+        </div>
+    }
+</div>
